@@ -1,26 +1,29 @@
 <template>
-  <header>
-    <nav>
-      <ul>
-        <li class="nav-item">
-          <img class="logo" src="./assets/build-a-bot-logo.png"/>
-          Build-a-Bot
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <HomePage />
-  </main>
+  <div>
+    <header>
+      <nav>
+        <ul>
+          <li class="nav-item">
+            <img class="logo" src="./assets/build-a-bot-logo.png"/>
+            Build-a-Bot
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <RobotBuilder />
+    </main>
+  </div>
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue';
+// import HomePage from './components/HomePage.vue';
+import RobotBuilder from './components/robot/RobotBuilder.vue';
 
 export default {
   name: 'App',
   components: {
-    HomePage,
+    RobotBuilder,
   },
 };
 </script>
