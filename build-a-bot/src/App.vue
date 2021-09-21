@@ -1,39 +1,45 @@
 <template>
-  <header>
-    <nav>
-      <ul>
-        <li class="nav-item">
-          <img class="logo" src="./assets/build-a-bot-logo.png"/>
-          Build-a-Bot
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <HomePage />
-  </main>
+  <div>
+    <header>
+      <nav>
+        <ul>
+          <li class="nav-item">
+            <img class="logo" src="./assets/build-a-bot-logo.png"/>
+            Build-a-Bot
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <RobotBuilder />
+    </main>
+  </div>
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue';
+// import HomePage from './components/HomePage.vue';
+import RobotBuilder from './components/robot/RobotBuilder.vue';
 
 export default {
   name: 'App',
   components: {
-    HomePage,
+    RobotBuilder,
   },
 };
 </script>
 
 <style>
+  body {
+    background: linear-gradient(to bottom, #555, #999);
+    background-attachment: fixed;
+  }
+</style>
+
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-body {
-  background: linear-gradient(to bottom, #555, #999);
-  background-attachment: fixed;
 }
 main {
   margin: 0 auto;
