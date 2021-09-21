@@ -11,19 +11,20 @@
       </nav>
     </header>
     <main>
-      <RobotBuilder />
+      <Search />
     </main>
   </div>
 </template>
 
 <script>
 // import HomePage from './components/HomePage.vue';
-import RobotBuilder from './components/robot/RobotBuilder.vue';
+// import RobotBuilder from './components/robot/RobotBuilder.vue';
+import Search from './components/search/Search.vue';
 
 export default {
   name: 'App',
   components: {
-    RobotBuilder,
+    Search,
   },
 };
 </script>
