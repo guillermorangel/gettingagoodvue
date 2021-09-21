@@ -79,7 +79,13 @@ export default {
   methods: {
     addToCart() {
       const robot = this.selectedRobot;
-      this.cart.push({ ...robot });
+      const cost = robot.head.cost
+        + robot.leftArm.cost
+        + robot.torso.cost
+        + robot.rightArm.cost
+        + robot.base.cost;
+
+      this.cart.push({ ...robot, cost });
     },
     selectNextHead() {
       this.selectedHeadIndex = getNextValidIndex(
