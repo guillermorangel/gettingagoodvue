@@ -37,6 +37,16 @@
 <script>
 import availableParts from '../../data/parts';
 
+function getPreviousValidIndex(index, length) {
+  const deprecatedIndex = index - 1;
+  return deprecatedIndex < 0 ? length - 1 : deprecatedIndex;
+}
+
+function getNextValidIndex(index, length) {
+  const incrementedIndex = index + 1;
+  return incrementedIndex > length - 1 ? 0 : incrementedIndex;
+}
+
 export default {
   name: 'RobotBuilder',
   data() {
@@ -46,11 +56,17 @@ export default {
     };
   },
   methods: {
-    selectPreviousHead() {
-      this.selectedHeadIndex -= 1;
-    },
     selectNextHead() {
-      this.selectedHeadIndex += 1;
+      this.selectedHeadIndex = getNextValidIndex(
+        this.selectedHeadIndex,
+        availableParts.heads.length,
+      );
+    },
+    selectPreviousHead() {
+      this.selectedHeadIndex = getPreviousValidIndex(
+        this.selectedHeadIndex,
+        availableParts.heads.length,
+      );
     },
   },
 };
