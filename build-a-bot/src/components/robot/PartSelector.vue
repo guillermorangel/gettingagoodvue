@@ -1,5 +1,5 @@
 <template>
-  <div class="part">
+  <div class="part" :class="position">
     <img :src="selectedPart.src" title="arm"/>
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
@@ -43,7 +43,7 @@ export default {
       );
     },
   },
-  props: ['parts'],
+  props: ['parts', 'position'],
 };
 
 </script>
