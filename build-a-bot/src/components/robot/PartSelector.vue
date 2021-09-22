@@ -43,7 +43,19 @@ export default {
       );
     },
   },
-  props: ['parts', 'position'],
+  props: {
+    parts: {
+      required: true,
+      type: Array,
+    },
+    position: {
+      required: true,
+      type: String,
+      validator(value) {
+        return ['left', 'right', 'top', 'bottom', 'center'].includes(value);
+      },
+    },
+  },
 };
 
 </script>
