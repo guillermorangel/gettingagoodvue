@@ -5,6 +5,7 @@
       <span v-if="!open" @click="open = !open">&#x25BC; Expand</span>
     </div>
     <slot v-if="open">
+      <div>Default content</div>
     </slot>
   </div>
 </template>
