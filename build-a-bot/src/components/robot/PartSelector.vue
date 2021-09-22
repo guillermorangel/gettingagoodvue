@@ -27,6 +27,9 @@ export default {
       selectedPartIndex: 0,
     };
   },
+  updated() {
+    this.emitSelectedPart();
+  },
   computed: {
     selectedPart() {
       return this.parts[this.selectedPartIndex];
@@ -41,14 +44,12 @@ export default {
         this.selectedPartIndex,
         this.parts.length,
       );
-      this.emitSelectedPart();
     },
     selectPreviousPart() {
       this.selectedPartIndex = getPreviousValidIndex(
         this.selectedPartIndex,
         this.parts.length,
       );
-      this.emitSelectedPart();
     },
   },
   props: {
