@@ -7,6 +7,9 @@
             <img class="logo" src="./assets/build-a-bot-logo.png"/>
             Build-a-Bot
           </li>
+          <li>
+            User: {{userName}}
+          </li>
         </ul>
       </nav>
     </header>
@@ -25,6 +28,16 @@ export default {
   name: 'App',
   components: {
     RobotBuilder,
+  },
+  data() {
+    return {
+      userName: 'Bob',
+    };
+  },
+  provide() {
+    return {
+      userName: this.userName,
+    };
   },
 };
 </script>
