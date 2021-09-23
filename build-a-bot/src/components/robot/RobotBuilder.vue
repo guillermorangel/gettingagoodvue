@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    <div class="partInfo" id="partInfo"></div>
       <div class="preview">
         <CollapsibleSection>
           <div class="preview-content">
