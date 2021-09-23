@@ -8,7 +8,8 @@
             Build-a-Bot
           </li>
           <li>
-            User: {{userName}}
+            User: {{user.userName}}
+            <button @click="changeUserName()">Change User</button>
           </li>
         </ul>
       </nav>
@@ -31,13 +32,20 @@ export default {
   },
   data() {
     return {
-      userName: 'Bob',
+      user: {
+        userName: 'Bob',
+      },
     };
   },
   provide() {
     return {
-      userName: this.userName,
+      user: this.user,
     };
+  },
+  methods: {
+    changeUserName() {
+      this.user.userName = 'Fred';
+    },
   },
 };
 </script>
