@@ -12,10 +12,20 @@ import parts from '../../data/parts';
 
 export default {
   name: 'PartInfo',
-  props: [
-    'partType',
-    'partId',
-  ],
+  props: {
+    partId: {
+      type: [
+        Number,
+        String,
+      ],
+      validator(value) {
+        return Number.isInteger(Number(value));
+      },
+    },
+    partType: {
+      type: String,
+    },
+  },
   computed: {
     part() {
       return parts[this.partType].find((part) => part.id === +this.partId);
