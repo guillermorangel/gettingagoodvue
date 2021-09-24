@@ -18,6 +18,7 @@ export default createRouter({
     path: '/parts/:partType/:partId',
     name: 'Parts',
     component: PartInfo,
+    props: true,
   }, {
     path: '/search',
     name: 'Search',
