@@ -52,7 +52,13 @@ export default {
       );
     },
     showPartInfo() {
-      this.$router.push('/parts');
+      this.$router.push({
+        name: 'Parts',
+        params: {
+          partId: this.selectedPart.id,
+          partType: this.selectedPart.type,
+        },
+      });
     },
   },
   props: {
