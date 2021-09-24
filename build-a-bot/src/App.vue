@@ -14,6 +14,16 @@
               :to="{ name: 'Build' }">
               Build
             </router-link>
+            <router-link
+              class="nav-link"
+              :to="{ name: 'BrowseParts' }">
+              Browse Parts
+            </router-link>
+            <router-link
+              class="nav-link"
+              :to="{ name: 'Search' }">
+              Search
+            </router-link>
           </li>
         </ul>
       </nav>
