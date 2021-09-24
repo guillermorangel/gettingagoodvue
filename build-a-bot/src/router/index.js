@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import HomePage from '../components/HomePage.vue';
 import RobotBuilder from '../components/robot/RobotBuilder.vue';
+import SidebarStandard from '../components/sidebar/SidebarStandard.vue';
+import SidebarBuild from '../components/sidebar/SidebarBuild.vue';
 import BrowseParts from '../components/part/BrowseParts.vue';
 import RobotHeads from '../components/part/RobotHeads.vue';
 import RobotArms from '../components/part/RobotArms.vue';
@@ -14,11 +16,17 @@ export default createRouter({
   routes: [{
     path: '/',
     name: 'Home',
-    component: HomePage,
+    components: {
+      default: HomePage,
+      sidebar: SidebarStandard,
+    },
   }, {
     path: '/build',
     name: 'Build',
-    component: RobotBuilder,
+    components: {
+      default: RobotBuilder,
+      sidebar: SidebarBuild,
+    },
   }, {
     path: '/parts/browse',
     name: 'BrowseParts',
