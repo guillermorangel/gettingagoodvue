@@ -8,6 +8,12 @@
               <img class="logo" src="./assets/build-a-bot-logo.png"/>
               Build-a-Bot
             </router-link>
+            <router-link
+              active-class="custom-active-class"
+              class="nav-link"
+              :to="{ name: 'Build' }">
+              Build
+            </router-link>
           </li>
         </ul>
       </nav>
@@ -67,5 +73,11 @@ ul {
 .nav-link {
   text-decoration: none;
   color: inherit;
+}
+.router-link-active {
+  color: white;
+}
+.custom-active-class {
+  color: purple;
 }
 </style>
