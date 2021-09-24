@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import HomePage from '../components/HomePage.vue';
 import RobotBuilder from '../components/robot/RobotBuilder.vue';
+import PartInfo from '../components/part/PartInfo.vue';
 import Search from '../components/search/Search.vue';
 
 export default createRouter({
@@ -13,6 +14,10 @@ export default createRouter({
     path: '/build',
     name: 'Build',
     component: RobotBuilder,
+  }, {
+    path: '/parts',
+    name: 'Parts',
+    component: PartInfo,
   }, {
     path: '/search',
     name: 'Search',
