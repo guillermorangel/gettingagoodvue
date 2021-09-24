@@ -1,6 +1,8 @@
 <template>
   <div class="part" :class="position">
-    <img :src="selectedPart.src" @click="showPartInfo = !showPartInfo" title="arm"/>
+    <router-link :to="showPartInfo()">
+      <img :src="selectedPart.src" title="arm"/>
+    </router-link>
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
     <span class="sale" v-show="selectedPart.onSale">Sale!</span>
@@ -51,6 +53,15 @@ export default {
         this.parts.length,
       );
     },
+    showPartInfo() {
+      return {
+        name: 'Parts',
+        params: {
+          partId: this.selectedPart.id,
+          partType: this.selectedPart.type,
+        },
+      };
+    },
   },
   props: {
     parts: {
@@ -94,6 +105,7 @@ export default {
   top: -25px;
 }
 .part img {
+  cursor: pointer;
   width:165px;
 }
 .top {
