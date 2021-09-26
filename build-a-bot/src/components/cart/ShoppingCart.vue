@@ -13,6 +13,14 @@
         </tr>
       </thead>
       <tbody>
+        <tr v-for="(robot, index) in cart" :key="index">
+          <td class="robot-title">
+            {{robot.head.title}}
+          </td>
+          <td class="cost">
+            {{robot.cost}}
+          </td>
+        </tr>
       </tbody>
     </table>
  </div>
@@ -21,6 +29,11 @@
 <script>
 export default {
   name: 'Cart',
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+  },
 };
 </script>
 
