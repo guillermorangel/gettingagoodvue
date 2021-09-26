@@ -37,6 +37,9 @@
               :to="{ name: 'Cart' }">
               Cart
             </router-link>
+            <div class="cart-items">
+              {{cart.length}}
+            </div>
           </li>
         </ul>
       </nav>
@@ -56,6 +59,11 @@
 
 export default {
   name: 'App',
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+  },
 };
 </script>
 
@@ -122,5 +130,16 @@ ul {
   background-color: #aaa;
   width: 100px;
   min-height: 300px;
+}
+.cart-items {
+  position: absolute;
+  top: -5px;
+  right: -9px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 100px;
+  background-color: mediumseagreen;
 }
 </style>
