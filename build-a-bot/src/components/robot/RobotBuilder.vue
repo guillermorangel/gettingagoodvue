@@ -96,7 +96,7 @@ export default {
         + robot.rightArm.cost
         + robot.base.cost;
 
-      this.cart.push({ ...robot, cost });
+      this.$store.commit('addRobotToCart', { ...robot, cost });
       this.addedToCart = true;
     },
   },
