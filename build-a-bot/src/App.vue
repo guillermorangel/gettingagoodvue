@@ -8,17 +8,23 @@
               <img class="logo" src="./assets/build-a-bot-logo.png"/>
               Build-a-Bot
             </router-link>
+          </li>
+          <li class="nav-item">
             <router-link
               active-class="custom-active-class"
               class="nav-link"
               :to="{ name: 'Build' }">
               Build
             </router-link>
+          </li>
+          <li class="nav-item">
             <router-link
               class="nav-link"
               :to="{ name: 'BrowseParts' }">
               Browse Parts
             </router-link>
+          </li>
+          <li class="nav-item">
             <router-link
               class="nav-link"
               :to="{ name: 'Search' }">
