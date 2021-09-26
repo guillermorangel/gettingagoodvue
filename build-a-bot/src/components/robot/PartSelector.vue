@@ -57,7 +57,7 @@ export default {
       return {
         name: 'Parts',
         params: {
-          partId: this.selectedPart.id,
+          partId: 'this.selectedPart.id',
           partType: this.selectedPart.type,
         },
       };

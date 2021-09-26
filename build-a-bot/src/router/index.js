@@ -56,6 +56,10 @@ export default createRouter({
     name: 'Parts',
     component: PartInfo,
     props: true,
+    beforeEnter(to, from, next) {
+      const isValidPartId = Number.isInteger(Number(to.params.partId));
+      next(isValidPartId);
+    },
   }, {
     path: '/search',
     name: 'Search',
