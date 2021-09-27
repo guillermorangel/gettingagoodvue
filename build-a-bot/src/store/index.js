@@ -23,6 +23,14 @@ export default createStore({
         })
         .catch(console.error);
     },
+    addRobotToCart({ commit, state }, robot) {
+      const cart = [...state.cart, robot];
+      axios.post('api/cart', cart)
+        .then(() => {
+          // on success, add robot to cart on local state
+          commit('addRobotToCart', robot);
+        });
+    },
   },
   getters: {
     cartSaleItems(state) {
