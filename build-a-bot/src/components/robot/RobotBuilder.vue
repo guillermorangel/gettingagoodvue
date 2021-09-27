@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="availableParts">
       <div class="preview">
         <CollapsibleSection>
           <div class="preview-content">
@@ -84,6 +84,9 @@ export default {
     };
   },
   computed: {
+    availableParts() {
+      return this.$store.state.parts;
+    },
     saleBorderClass() {
       return this.selectedRobot.head.onSale ? 'sale-border' : '';
     },
