@@ -64,7 +64,7 @@
             loader: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/cache-loader/dist/cjs.js',
             options: {
               cacheDirectory: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/.cache/vue-loader',
-              cacheIdentifier: '1199b19a'
+              cacheIdentifier: 'cd1e619c'
             }
           },
           /* config.module.rule('vue').use('vue-loader') */
@@ -72,7 +72,7 @@
             loader: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/vue-loader-v16/dist/index.js',
             options: {
               cacheDirectory: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/.cache/vue-loader',
-              cacheIdentifier: '1199b19a',
+              cacheIdentifier: 'cd1e619c',
               babelParserPlugins: [
                 'jsx',
                 'classProperties',
@@ -82,21 +82,14 @@
           }
         ]
       },
-      /* config.module.rule('images') */
       {
-        test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         use: [
-          /* config.module.rule('images').use('url-loader') */
           {
-            loader: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/url-loader/dist/cjs.js',
+            loader: 'url-loader',
             options: {
-              limit: 4096,
-              fallback: {
-                loader: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/file-loader/dist/cjs.js',
-                options: {
-                  name: 'img/[name].[hash:8].[ext]'
-                }
-              }
+              limit: 5000,
+              name: 'img/[name].[hash:8].[ext]'
             }
           }
         ]
@@ -1155,7 +1148,7 @@
             loader: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/cache-loader/dist/cjs.js',
             options: {
               cacheDirectory: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/.cache/babel-loader',
-              cacheIdentifier: '7d8d62ea'
+              cacheIdentifier: 'ec401914'
             }
           },
           /* config.module.rule('js').use('thread-loader') */
@@ -1187,13 +1180,19 @@
                 '.vue'
               ],
               cache: true,
-              cacheIdentifier: '6a4c41b6',
+              cacheIdentifier: '5dceac32',
               emitWarning: false,
               emitError: false,
               eslintPath: '/Users/guillermo/git/guillermorangel/gettingagoodvue/build-a-bot/node_modules/eslint',
               formatter: undefined
             }
           }
+        ]
+      },
+      {
+        test: /\.coffee$/,
+        use: [
+          'coffee-loader'
         ]
       }
     ]
