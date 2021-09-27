@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import pinDirective from '../shared/directive/pin-directive';
 
 function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
@@ -41,9 +40,6 @@ export default {
     selectedPart() {
       return this.parts[this.selectedPartIndex];
     },
-  },
-  directives: {
-    pin: pinDirective,
   },
   methods: {
     emitSelectedPart() {
